@@ -1,14 +1,30 @@
-package Haagahelia.Book;
+package Haagahelia.Book.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType; 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
+@Entity
 public class Book {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id; 
+	
     private String title;
     private String author;
     private int publicationYear;
     private String isbn;
     private double price;
 
+    public long getId() {
+    	return id; 
+    }
+    
+    public void setId(long id) {
+    	this.id = id; 
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -51,10 +67,9 @@ public class Book {
         this.price = price;
     }
     
-    // Default constructor
+   
     public Book() {}
 
-    // Parameterized constructor
     public Book(String title, String author, int publicationYear, String isbn, double price) {
         this.title = title;
         this.author = author;
@@ -62,4 +77,10 @@ public class Book {
         this.isbn = isbn;
         this.price = price;
     }
+    
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", title=" + title + ", author=" + author + ", publication year=" + publicationYear + "]";
+	}
+   
 }

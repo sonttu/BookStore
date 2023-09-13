@@ -1,10 +1,12 @@
 package Haagahelia.BookStore.web;
 
 
-import Haagahelia.Book.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import Haagahelia.Book.domain.Book;
+
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
